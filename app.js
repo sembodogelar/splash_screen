@@ -9,19 +9,20 @@ window.addEventListener('DOMContentLoaded', () => {
                 span.classList.add('active');
             }, (idx + 1) * 400);
         });
-
-        setTimeout(() => {
-            logoSpans.forEach((span, idx) => {
-                setTimeout(() => {
-                    span.classList.remove('active');
-                    span.classList.add('fade');
-                }, (idx + 1) * 50);
-            });
-        }, 2000);
     }, 0);
 });
 
-// Hide the intro screen when the logo-header is clicked
+// Hide the intro screen and fade out logo-header when it is clicked
 logo.addEventListener('click', () => {
-    intro.style.top = '-100vh';
+    logoSpans.forEach((span, idx) => {
+        setTimeout(() => {
+            span.classList.remove('active');
+            span.classList.add('fade');
+        }, (idx + 1) * 50);
+    });
+
+    // Wait for the fade-out animation to complete before hiding the intro screen
+    setTimeout(() => {
+        intro.style.top = '-100vh';
+    }, (logoSpans.length * 50) + 500); // Adjust timing to match the fade animation
 });
