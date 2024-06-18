@@ -18,9 +18,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 }, (idx + 1) * 50);
             });
         }, 2000);
-
-        setTimeout(() => {
-            intro.style.top = '-100vh';
-        }, 2300);
     }, 0);
+});
+
+// Hide the intro screen when the logo-header is clicked
+logo.addEventListener('click', () => {
+    intro.style.top = '-100vh';
 });
