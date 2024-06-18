@@ -40,6 +40,11 @@ header h4 {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
+    transition: box-shadow 0.5s ease-in-out; /* Add transition for box-shadow */
+}
+
+.logo-header.glow {
+    box-shadow: 0 0 20px 5px rgba(173, 216, 230, 0.8); /* Add baby blue glow */
 }
 
 .logo {

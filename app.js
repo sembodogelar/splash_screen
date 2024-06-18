@@ -9,6 +9,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 span.classList.add('active');
             }, (idx + 1) * 400);
         });
+
+        // Add the glow effect after all spans have faded in
+        setTimeout(() => {
+            logo.classList.add('glow');
+        }, (logoSpans.length + 1) * 400);
     }, 0);
 });
 
